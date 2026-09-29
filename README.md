@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Digi-Lib — Digital Library Book Finder (React)
 
 A multi-page React app for a digital library, built with Vite, React Router, and Context API. Same experience as the design mockup: Get Started → Sign Up / Log In → full dashboard with Home, Explore, Categories, My Books, Bookmarks, History, Help & Support, and Profile.
@@ -66,3 +67,6 @@ src/
 - All state (auth session, borrowed/reserved/bookmarked books, history) lives in memory via React Context — refreshing the page resets it, since there's no backend.
 - Signing up or logging in with any email/password works — this is a front-end prototype without real authentication.
 - The brand color (`#05703D`) is sampled directly from the provided Digi-Lib logo.
+=======
+# Digital_Book_Finder
+>>>>>>> 6f92b4a3fe03dbae4ae5ab9fa31bc488442067b4
