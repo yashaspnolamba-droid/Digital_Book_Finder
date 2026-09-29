@@ -1,0 +1,47 @@
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.cat-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: 0.15s;
+  cursor: pointer;
+}
+.cat-card:hover {
+  border-color: var(--brand);
+  transform: translateY(-2px);
+}
+.cat-ic {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cat-ic svg {
+  width: 22px;
+  height: 22px;
+}
+.cat-card b {
+  display: block;
+  font-size: 14.5px;
+}
+.cat-card span {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+@media (max-width: 980px) {
+  .cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

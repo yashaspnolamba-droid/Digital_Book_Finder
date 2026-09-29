@@ -1,0 +1,578 @@
+/* =========================================
+   ✨ Enhanced Home Hero & Isolated Circuital Cards
+   ========================================= */
+
+.home-page-container {
+  animation: pageFadeIn 0.5s ease-out;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌿 Hero Card Container */
+.hero-card {
+  background: radial-gradient(circle at 85% 30%, rgba(12, 143, 78, 0.45), transparent 60%),
+              linear-gradient(135deg, var(--brand-darker, #042915), var(--brand-dark, #0a4f2c) 80%);
+  border-radius: var(--radius-l, 20px);
+  padding: 42px 48px;
+  color: #fff;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 16px 38px -10px rgba(4, 41, 21, 0.35);
+}
+
+.hero-card::after {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(167, 243, 208, 0.12), transparent 70%);
+  right: -40px;
+  top: -80px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: auraPulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes auraPulse {
+  0% { transform: scale(0.95); opacity: 0.6; }
+  100% { transform: scale(1.15); opacity: 1; }
+}
+
+.hero-card .copy {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #d1fae5;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 99px;
+  margin-bottom: 16px;
+  backdrop-filter: blur(6px);
+}
+
+.sparkle-icon {
+  color: #fde047;
+}
+
+.hero-title {
+  font-size: clamp(30px, 3.4vw, 40px);
+  line-height: 1.15;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.015em;
+}
+
+.hero-title-accent {
+  color: #a7f3d0;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hero-subtitle {
+  margin-top: 12px;
+  color: #e2f1e8;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.92;
+  max-width: 520px;
+}
+
+.search-pill {
+  margin-top: 24px;
+  display: flex;
+  background: #ffffff;
+  border-radius: 100px;
+  padding: 5px 6px 5px 22px;
+  align-items: center;
+  gap: 12px;
+  max-width: 480px;
+  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.search-pill:focus-within {
+  border-color: #a7f3d0;
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.45);
+  transform: translateY(-1px);
+}
+
+.search-pill input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14.5px;
+  font-family: inherit;
+  padding: 8px 0;
+  color: #1a2e22;
+}
+
+.search-pill input::placeholder {
+  color: #8b9e93;
+}
+
+.search-action-btn {
+  background: var(--brand-darker, #042915);
+  color: #fff;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.search-action-btn:hover {
+  background: #021a0d;
+  transform: scale(1.08);
+}
+
+/* 📚 3D Real Books on Shelf */
+.hero-shelf {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 0 16px 14px 16px;
+  flex-shrink: 0;
+  min-width: 250px;
+  justify-content: center;
+}
+
+.hero-shelf::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1));
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), 0 0 12px rgba(167, 243, 208, 0.3);
+}
+
+.hero-shelf .b {
+  width: 44px;
+  border-radius: 5px 8px 3px 3px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    inset 4px 0 6px rgba(255, 255, 255, 0.3),
+    inset -4px 0 8px rgba(0, 0, 0, 0.4),
+    4px 6px 16px rgba(0, 0, 0, 0.35);
+  transform-origin: bottom center;
+  animation: bookGentleFloat 4s ease-in-out infinite alternate;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-shelf .b:hover {
+  transform: translateY(-8px) scale(1.04) !important;
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.45);
+}
+
+.hero-shelf .b::before {
+  content: '';
+  position: absolute;
+  top: 18%;
+  left: 0;
+  right: 0;
+  height: 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.15) 30%,
+    transparent 35%,
+    rgba(255, 255, 255, 0.55) 70%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+.hero-shelf .b::after {
+  content: '';
+  position: absolute;
+  bottom: 22%;
+  left: 20%;
+  right: 20%;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 2px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero-shelf .b1 {
+  height: 155px !important;
+  background: linear-gradient(135deg, #f0c356, #d49c26) !important;
+  animation-delay: 0s;
+}
+
+.hero-shelf .b2 {
+  height: 195px !important;
+  background: linear-gradient(135deg, #d97852, #b8532f) !important;
+  animation-delay: 0.6s;
+}
+
+.hero-shelf .b3 {
+  height: 135px !important;
+  background: linear-gradient(135deg, #8cbfa0, #5c8f73) !important;
+  animation-delay: 1.2s;
+}
+
+.hero-shelf .b4 {
+  height: 175px !important;
+  background: linear-gradient(135deg, #7ba1c2, #4d7394) !important;
+  transform: rotate(8.5deg);
+  transform-origin: bottom right;
+  margin-left: 2px;
+  animation: bookLeanFloat 4.5s ease-in-out infinite alternate;
+  animation-delay: 0.3s;
+}
+
+@keyframes bookGentleFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
+
+@keyframes bookLeanFloat {
+  0% { transform: rotate(8.5deg) translateY(0); }
+  100% { transform: rotate(7deg) translateY(-3px); }
+}
+
+/* ========================================================
+   ⭕ Circuital Cards: Strictly Isolated & No Parallel Hover
+   ======================================================== */
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 26px;
+}
+
+/* Card Container */
+.circular-card {
+  background: #ffffff;
+  border: 1px solid var(--border, #ebe7df);
+  border-radius: 20px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 165px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+  isolation: isolate; /* Creates independent stacking context */
+}
+
+/* Hover Effect ONLY on the currently hovered card */
+.circular-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px -8px rgba(12, 143, 78, 0.16);
+  border-color: rgba(12, 143, 78, 0.35);
+}
+
+.stat-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  pointer-events: none; /* Prevents event bubbling to siblings */
+}
+
+/* Mini Icon Circle Badge on the Left */
+.mini-gauge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  pointer-events: none;
+  transition: transform 0.25s ease;
+}
+
+.circular-card:hover .mini-gauge-icon {
+  transform: scale(1.1) rotate(-6deg);
+}
+
+.mini-gauge-icon.green-icon {
+  border-color: #0c8f4e;
+  color: #0c8f4e;
+  background: #eaf6ef;
+}
+
+.mini-gauge-icon.gold-icon {
+  border-color: #d97706;
+  color: #b45309;
+  background: #fbf2e1;
+}
+
+.mini-gauge-icon.sage-icon {
+  border-color: #059669;
+  color: #047857;
+  background: #ecfdf5;
+}
+
+.mini-gauge-icon.purple-icon {
+  border-color: #042915;
+  color: #042915;
+  background: #eaf6ef;
+}
+
+/* Gauge Wrapper */
+.gauge-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Soft ambient disc contained strictly inside the circuit */
+.gauge-inner-disc {
+  position: absolute;
+  inset: 7px;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.circular-card:hover .gauge-inner-disc {
+  transform: scale(1.05);
+  opacity: 0.95;
+}
+
+/* Rotated SVG */
+.gauge-svg {
+  transform: rotate(-90deg);
+  display: block;
+  pointer-events: none;
+}
+
+.gauge-progress-arc {
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+/* Center Percentage Text */
+.gauge-percentage-label {
+  position: absolute;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--brand-darker, #042915);
+  letter-spacing: -0.02em;
+  pointer-events: none;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.circular-card:hover .gauge-percentage-label {
+  transform: scale(1.08);
+  color: var(--brand, #0c8f4e);
+}
+
+/* ========================================================
+   ⚡ Independent Circuit Render Animations (No Cross-Trigger)
+   ======================================================== */
+
+/* Circumference of radius 40 = 251.3px */
+
+/* 1️⃣ Card 1: Books Available (90% => Target Offset: 25px) */
+.card-books .gauge-progress-arc {
+  stroke-dasharray: 252;
+  stroke-dashoffset: 25px;
+  animation: initCircuitBooks 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards;
+}
+.card-books:hover .gauge-progress-arc {
+  animation: replayCircuitBooks 0.95s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes initCircuitBooks {
+  from { stroke-dashoffset: 252px; }
+  to { stroke-dashoffset: 25px; }
+}
+@keyframes replayCircuitBooks {
+  0% { stroke-dashoffset: 252px; }
+  100% { stroke-dashoffset: 25px; }
+}
+
+/* 2️⃣ Card 2: New Arrivals (30% => Target Offset: 176px) */
+.card-arrivals .gauge-progress-arc {
+  stroke-dasharray: 252;
+  stroke-dashoffset: 176px;
+  animation: initCircuitArrivals 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards;
+}
+.card-arrivals:hover .gauge-progress-arc {
+  animation: replayCircuitArrivals 0.95s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes initCircuitArrivals {
+  from { stroke-dashoffset: 252px; }
+  to { stroke-dashoffset: 176px; }
+}
+@keyframes replayCircuitArrivals {
+  0% { stroke-dashoffset: 252px; }
+  100% { stroke-dashoffset: 176px; }
+}
+
+/* 3️⃣ Card 3: Categories (80% => Target Offset: 50px) */
+.card-categories .gauge-progress-arc {
+  stroke-dasharray: 252;
+  stroke-dashoffset: 50px;
+  animation: initCircuitCategories 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards;
+}
+.card-categories:hover .gauge-progress-arc {
+  animation: replayCircuitCategories 0.95s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes initCircuitCategories {
+  from { stroke-dashoffset: 252px; }
+  to { stroke-dashoffset: 50px; }
+}
+@keyframes replayCircuitCategories {
+  0% { stroke-dashoffset: 252px; }
+  100% { stroke-dashoffset: 50px; }
+}
+
+/* 4️⃣ Card 4: Active Users (60% => Target Offset: 101px) */
+.card-users .gauge-progress-arc {
+  stroke-dasharray: 252;
+  stroke-dashoffset: 101px;
+  animation: initCircuitUsers 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards;
+}
+.card-users:hover .gauge-progress-arc {
+  animation: replayCircuitUsers 0.95s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes initCircuitUsers {
+  from { stroke-dashoffset: 252px; }
+  to { stroke-dashoffset: 101px; }
+}
+@keyframes replayCircuitUsers {
+  0% { stroke-dashoffset: 252px; }
+  100% { stroke-dashoffset: 101px; }
+}
+
+/* Bottom Area: Large Count & Descriptive Label */
+.stat-card-bottom {
+  margin-top: 14px;
+  pointer-events: none;
+}
+
+.stat-card-bottom b {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-size: 25px;
+  color: var(--brand-darker, #042915);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.stat-card-bottom span {
+  font-size: 13px;
+  color: var(--muted, #666);
+  font-weight: 500;
+  margin-top: 3px;
+  display: block;
+}
+
+/* =========================================
+   🏷️ Section Header & View All
+   ========================================= */
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.section-head h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  color: var(--brand-darker, #042915);
+}
+
+.view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--brand, #0c8f4e);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.view-all .arrow-icon {
+  transition: transform 0.2s ease;
+}
+
+.view-all:hover {
+  color: var(--brand-darker, #042915);
+}
+
+.view-all:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .stat-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 980px) {
+  .hero-card {
+    grid-template-columns: 1fr;
+    padding: 30px 24px;
+    gap: 30px;
+  }
+  .hero-shelf {
+    align-self: center;
+    margin-top: 10px;
+  }
+  .stat-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .stat-row {
+    grid-template-columns: 1fr;
+  }
+}

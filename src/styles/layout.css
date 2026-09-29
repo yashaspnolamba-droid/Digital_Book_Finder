@@ -1,0 +1,282 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background: var(--brand-darker);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 16px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 40;
+  transition: 0.2s;
+}
+.sidebar .brand-lockup {
+  padding: 0 10px;
+  margin-bottom: 30px;
+}
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  overflow-y: auto;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #cfe3d6;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  transition: 0.15s;
+}
+.nav-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+.nav-item:hover {
+  background: #0b4a2c;
+  color: #fff;
+}
+.nav-item.active {
+  background: var(--brand-mid);
+  color: #fff;
+}
+.nav-item.active svg {
+  opacity: 1;
+}
+.sidebar-foot {
+  border-top: 1px solid #0c4a2c;
+  padding-top: 14px;
+  margin-top: 10px;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 34px;
+  background: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.topbar .crumb {
+  font-size: 13px;
+  color: var(--faint);
+}
+.topbar .crumb b {
+  color: var(--ink);
+}
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.icon-btn svg {
+  width: 17px;
+  height: 17px;
+  color: var(--ink);
+}
+.icon-btn .dot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--due);
+}
+.menu-toggle {
+  display: none;
+}
+.avatar-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px 6px 6px;
+  border-radius: 100px;
+  background: #fff;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+.avatar-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Fraunces', serif;
+}
+.avatar-chip .nm {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.page {
+  padding: 6px 34px 60px;
+  max-width: 1180px;
+}
+.page-head {
+  margin-bottom: 26px;
+}
+.page-head h1 {
+  font-size: 27px;
+  color: var(--brand-darker);
+}
+.page-head .sub {
+  color: var(--muted);
+  font-size: 14.5px;
+  margin-top: 6px;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 34px 0 16px;
+}
+.section-head h2 {
+  font-size: 19px;
+  color: var(--ink);
+}
+.view-all {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand);
+  background: none;
+  border: none;
+}
+
+.sidebar-backdrop {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    box-shadow: none;
+  }
+  .sidebar.open {
+    left: 0;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
+  }
+  .sidebar-backdrop.open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 39;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .page {
+    padding: 6px 18px 60px;
+  }
+  .topbar {
+    padding: 16px 18px;
+  }
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   🏛️ Centered Sidebar Logo & App Title
+   ========================================= */
+
+/* Container holding the logo box and title */
+.sidebar-brand-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 26px 16px 22px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 16px;
+}
+
+/* Plain background box with rounded corners for high logo visibility */
+.sidebar-logo-box {
+  width: 72px;
+  height: 72px;
+  background-color: #ffffff; /* Plain, crisp contrast for the green logo */
+  border-radius: 18px;       /* Smooth rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  margin-bottom: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sidebar-logo-box:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+/* Logo image sized to fit inside the card */
+.sidebar-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Title placed centered below the logo */
+.sidebar-app-title {
+  font-family: 'Fraunces', serif, Georgia;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  display: block;
+}
+
+.sidebar-app-title span {
+  color: #4ade80; /* Accent color for the tilde '~' */
+  margin: 0 1px;
+}

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* Design tokens & base resets first */
+@import './styles/tokens.css';
+
+/* Shell / navigation */
+@import './styles/layout.css';
+
+/* Shared UI pieces: buttons, book cards, modal, toast, empty state */
+@import './styles/components.css';
+
+/* Screen-specific styles */
+@import './styles/getstarted.css';
+@import './styles/auth.css';
+@import './styles/home.css';
+@import './styles/explore.css';
+@import './styles/categories.css';
+@import './styles/mybooks.css';
+@import './styles/history.css';
+@import './styles/help.css';
+@import './styles/profile.css';
